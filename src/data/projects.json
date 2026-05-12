@@ -1,0 +1,32 @@
+[
+  {
+    "id": "farmshop",
+    "title": "FarmShop",
+    "description": "A modern e-commerce platform for local farmers to sell their produce directly to consumers. Features include real-time inventory, payment processing, and delivery tracking.",
+    "techStack": ["React", "Node.js", "MongoDB", "Stripe", "Socket.io"],
+    "githubUrl": "https://github.com/yonaTech000/farmshop",
+    "liveUrl": "https://farmshop-demo.vercel.app",
+    "image": "/img/farmshop.png",
+    "featured": true
+  },
+  {
+    "id": "taskmaster",
+    "title": "TaskMaster",
+    "description": "A powerful task management application with team collaboration features, time tracking, and advanced analytics. Built with modern web technologies for optimal performance.",
+    "techStack": ["React", "TypeScript", "Firebase", "Material-UI", "Chart.js"],
+    "githubUrl": "https://github.com/yonaTech000/taskmaster",
+    "liveUrl": "https://taskmaster-app.netlify.app",
+    "image": "/img/taskmanager.png",
+    "featured": true
+  },
+  {
+    "id": "cybersecure",
+    "title": "CyberSecure",
+    "description": "A comprehensive cybersecurity dashboard for monitoring network threats, analyzing vulnerabilities, and managing security incidents in real-time.",
+    "techStack": ["Vue.js", "Python", "Django", "PostgreSQL", "Redis"],
+    "githubUrl": "https://github.com/yonaTech000/cybersecure",
+    "liveUrl": "https://cybersecure-dashboard.com",
+    "image": "/img/cybersecure.png",
+    "featured": false
+  }
+]
