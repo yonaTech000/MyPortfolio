@@ -1,5 +1,6 @@
+import React from 'react'
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react'
+import { Github, Linkedin, Mail, Phone, Twitter } from 'lucide-react'
 
 const socialLinks = [
   {
@@ -15,10 +16,29 @@ const socialLinks = [
     color: 'hover:text-blue-600',
   },
   {
-    name: 'Twitter',
+    name: 'X',
     icon: Twitter,
-    url: 'https://twitter.com/kayvin',
+    url: 'https://x.com/kayvin',
     color: 'hover:text-blue-400',
+  },
+  {
+    name: 'WhatsApp',
+    icon: Phone,
+    url: 'https://wa.me/254716194441',
+    color: 'hover:text-green-500',
+  },
+  {
+    name: 'TikTok',
+    icon: (props: React.SVGProps<SVGSVGElement>) => {
+      const { width = 20, height = 20, ...rest } = props;
+      return (
+        <svg viewBox="0 0 24 24" fill="currentColor" width={width} height={height} {...rest}>
+          <path d="M12.75 2h3.5a.75.75 0 0 1 .75.75v.5a4.25 4.25 0 0 0 4.25 4.25h.5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-.75.75h-1.7a7.25 7.25 0 1 1-7.25-7.25V2.75A.75.75 0 0 1 12.75 2zm-2.25 12.5a2.25 2.25 0 1 0 2.25 2.25V7.5h-1.5v9.25a.75.75 0 1 1-1.5 0z" />
+        </svg>
+      );
+    },
+    url: 'https://tiktok.com/@kayvin',
+    color: 'hover:text-pink-500',
   },
   {
     name: 'Email',
