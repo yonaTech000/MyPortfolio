@@ -10,7 +10,7 @@ import { generateSEO } from '../utils/seo'
 
 function Home() {
   const seo = generateSEO({
-    title: 'Kayvin - Software Developer',
+    title: 'Dev-Kayvin - Software Developer',
     description: 'Professional software developer specializing in modern web technologies, React, TypeScript, and full-stack development.',
   })
 
