@@ -7,7 +7,7 @@ export interface SEOProps {
 }
 
 export const defaultSEO: SEOProps = {
-  title: 'Kayvin - Software Developer',
+  title: 'Dev Kayvin - Software Developer',
   description: 'Professional portfolio showcasing modern web development projects and expertise in React, TypeScript, and full-stack development.',
   keywords: 'software developer, portfolio, React, TypeScript, web development, full-stack',
   image: '/og-image.png',

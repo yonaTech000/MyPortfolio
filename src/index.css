@@ -89,6 +89,21 @@
   * {
     @apply border-border;
   }
+
+  /* Prevent the “text cursor/caret” from showing on non-editable elements */
+  html,
+  body {
+    cursor: default;
+    caret-color: transparent;
+  }
+
+  input,
+  textarea,
+  [contenteditable='true'] {
+    caret-color: auto;
+    cursor: text;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
