@@ -25,7 +25,7 @@ const socialLinks = [
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      url: 'https://www.linkedin.com/in/kelvin-mburu-8205b0410/',
+      url: 'https://www.linkedin.com/in/kelvin-mburu-8205b0410/ ',
       color: 'hover:text-blue-700',
     },
   {
