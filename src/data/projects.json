@@ -4,8 +4,8 @@
     "title": "FarmShop",
     "description": "A modern e-commerce platform for local farmers to sell their produce directly to consumers. Features include real-time inventory, payment processing, and delivery tracking.",
     "techStack": ["React", "Node.js", "MongoDB", "Stripe", "Socket.io"],
-    "githubUrl": "https://github.com/yonaTech000/farmshop",
-    "liveUrl": "https://farmshop-demo.vercel.app",
+    "githubUrl": "https://github.com/yonaTech000/farm-inputs-ecommerce",
+    "liveUrl": "https://farm-inputs-ecommerce.vercel.app/",
     "image": "/img/farmshop.png",
     "featured": true
   },
