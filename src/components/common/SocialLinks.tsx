@@ -10,9 +10,9 @@ const socialLinks = [
     color: 'hover:text-gray-900 dark:hover:text-gray-100',
   },
   {
-    name: 'LinkedIn',
-    icon: Linkedin,
-    url: 'https://linkedin.com/in/kayvin',
+    name: 'Facebook',
+    icon: Facebook,
+    url: 'https://www.facebook.com/profile.php?id=61575283542717',
     color: 'hover:text-blue-600',
   },
   {
