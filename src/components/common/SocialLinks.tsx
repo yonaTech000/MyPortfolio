@@ -18,7 +18,7 @@ const socialLinks = [
   {
     name: 'X',
     icon: Twitter,
-    url: 'https://x.com/kayvin',
+    url: 'https://x.com/Kayvin_Dev254',
     color: 'hover:text-blue-400',
   },
   {
