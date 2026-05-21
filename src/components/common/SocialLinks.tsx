@@ -22,6 +22,12 @@ const socialLinks = [
     url: 'https://x.com/Kayvin_Dev254',
     color: 'hover:text-blue-400',
   },
+    {
+      name: 'LinkedIn',
+      icon: Linkedin,
+      url: 'https://www.linkedin.com/in/kayvin',
+      color: 'hover:text-blue-700',
+    },
   {
     name: 'WhatsApp',
     icon: Phone,
@@ -31,7 +37,7 @@ const socialLinks = [
   {
     name: 'TikTok',
     // Updated props to accept 'size' so it matches how Lucide components work below
-    icon: ({ size = 20, ...props }: { size?: number; [key: string]: any }) => (
+    icon: ({ size = 20, ...props }: { size?: number; } & React.SVGAttributes<SVGSVGElement>) => (
       <svg 
         viewBox="0 0 24 24" 
         fill="currentColor" 
