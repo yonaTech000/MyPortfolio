@@ -11,11 +11,11 @@
   },
   {
     "id": "taskmaster",
-    "title": "TaskMaster",
+    "title": "Nice Digital City",
     "description": "A powerful task management application with team collaboration features, time tracking, and advanced analytics. Built with modern web technologies for optimal performance.",
     "techStack": ["React", "TypeScript", "Firebase", "Material-UI", "Chart.js"],
-    "githubUrl": "https://github.com/yonaTech000/taskmaster",
-    "liveUrl": "https://taskmaster-app.netlify.app",
+    "githubUrl": "https://github.com/yonaTech000/nice-digital-city",
+    "liveUrl": "https://nice-digital-city.vercel.app",
     "image": "/img/taskmanager.png",
     "featured": true
   },
