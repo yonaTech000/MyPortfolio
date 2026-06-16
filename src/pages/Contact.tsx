@@ -22,7 +22,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: 'Location',
-    value: 'Kenya,Nairobi',
+    value: 'Nairobi, Kenya',
     href: '#',
   },
 ]
@@ -44,8 +44,8 @@ function Contact() {
         <meta property="og:url" content={seo.url} />
       </Helmet>
 
-      <div className="min-h-screen pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen pt-24 pb-16 bg-[#050816] text-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             title="Get In Touch"
             subtitle="Let's work together on your next project"
@@ -59,24 +59,24 @@ function Contact() {
               viewport={{ once: true }}
             >
               <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-              <div className="space-y-6">
+              <div className="grid gap-4">
                 {contactInfo.map((info, index) => (
                   <motion.div
                     key={info.label}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    transition={{ duration: 0.5, delay: index * 0.08 }}
                     viewport={{ once: true }}
-                    className="flex items-center"
+                    className="rounded-[1.75rem] border border-white/10 bg-slate-950/80 p-5 sm:flex sm:items-center sm:gap-4 min-w-0 w-full overflow-hidden"
                   >
-                    <div className="p-3 bg-primary/10 rounded-lg mr-4">
-                      <info.icon size={20} className="text-primary" />
+                    <div className="mb-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-3xl bg-violet-500/15 text-violet-200 sm:mb-0">
+                      <info.icon size={20} />
                     </div>
-                    <div>
-                      <p className="font-medium">{info.label}</p>
+                    <div className="min-w-0 w-full">
+                      <p className="text-sm uppercase tracking-[0.35em] text-slate-400">{info.label}</p>
                       <a
                         href={info.href}
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="break-all text-base text-white hover:text-violet-300 transition-colors whitespace-normal"
                       >
                         {info.value}
                       </a>

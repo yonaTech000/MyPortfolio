@@ -136,4 +136,31 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  .glass-panel {
+    background: rgba(15, 23, 42, 0.72);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(22px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2rem;
+  }
+
+  body {
+    background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.15), transparent 25%),
+      radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.12), transparent 20%),
+      #050816;
+  }
+
+  .hero-glow {
+    background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.28), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.22), transparent 28%);
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .dark .glass {
+    @apply bg-black/10 border-white/10;
+  }
 }

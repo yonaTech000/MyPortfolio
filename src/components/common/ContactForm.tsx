@@ -17,27 +17,33 @@ function ContactForm() {
     message: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [statusMessage, setStatusMessage] = useState('')
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value,
     }))
+    setStatusMessage('')
   }
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    const subject = encodeURIComponent(`${formData.name} sent a message from the portfolio`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    )
+    const mailtoLink = `mailto:yonatechnologies.ltd@gmail.com?subject=${subject}&body=${body}`
 
-    // Reset form
-    setFormData({ name: '', email: '', message: '' })
-    setIsSubmitting(false)
+    setStatusMessage('Email composer opened. Please send your message.')
+    window.location.href = mailtoLink
 
-    // In a real app, you would send the data to your backend
-    alert('Thank you for your message! I will get back to you soon.')
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setFormData({ name: '', email: '', message: '' })
+    }, 500)
   }
 
   return (
@@ -109,6 +115,12 @@ function ContactForm() {
           </>
         )}
       </Button>
+      {statusMessage && (
+        <p className="text-sm text-emerald-400">{statusMessage}</p>
+      )}
+      {statusMessage && (
+        <p className="text-sm text-emerald-400">{statusMessage}</p>
+      )}
     </motion.form>
   )
 }

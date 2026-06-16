@@ -27,7 +27,7 @@ function Projects() {
 
   const seo = generateSEO({
     title: 'Projects - Kayvin',
-    description: 'Explore my portfolio of web development projects including FarmShop, TaskMaster, and CyberSecure.',
+    description: 'Explore my portfolio of web development projects including FarmShop, Nice Digital City, and LuxeWear Eshop.',
     url: 'https://kayvin.dev/projects',
   })
 
@@ -41,7 +41,7 @@ function Projects() {
         <meta property="og:url" content={seo.url} />
       </Helmet>
 
-      <div className="min-h-screen pt-24 pb-16">
+      <div className="min-h-screen pt-24 pb-16 bg-[#050816] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             title="My Projects"

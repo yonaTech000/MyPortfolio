@@ -1,18 +1,47 @@
+import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Download } from 'lucide-react'
+import { ArrowRight, Download, Sparkles } from 'lucide-react'
 import AnimatedBackground from '../components/common/AnimatedBackground'
 import Button from '../components/ui/Button'
-
-import { fadeInUp, staggerContainer } from '../utils/animations'
+import SectionTitle from '../components/common/SectionTitle'
 import { generateSEO } from '../utils/seo'
 
 function Home() {
   const seo = generateSEO({
-    title: 'Dev-Kayvin - Software Developer',
-    description: 'Professional software developer specializing in modern web technologies, React, TypeScript, and full-stack development.',
+    title: 'Kayvin | Premium Developer Portfolio',
+    description:
+      'Kayvin is a modern software developer building scalable, user-focused digital experiences with React, TypeScript, and web performance in mind.',
   })
+
+  const roles = useMemo(
+    () => ['Full Stack Developer', 'Frontend Engineer', 'UI/UX Enthusiast', 'Software Developer'],
+    []
+  )
+  const [activeRole, setActiveRole] = useState(0)
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveRole((current) => (current + 1) % roles.length)
+    }, 2800)
+    return () => window.clearInterval(interval)
+  }, [roles.length])
+
+  const highlights = [
+    {
+      title: 'Modern Development',
+      description: 'Clean, performant web applications built with React, TypeScript, and Tailwind CSS.',
+    },
+    {
+      title: 'Product Focus',
+      description: 'Design-driven solutions for SaaS products, landing pages, and digital experiences.',
+    },
+    {
+      title: 'Ready to Collaborate',
+      description: 'Fast onboarding, strong communication, and on-time delivery for premium projects.',
+    },
+  ]
 
   return (
     <>
@@ -29,93 +58,114 @@ function Home() {
         <meta name="twitter:image" content={seo.image} />
       </Helmet>
 
-      <div className="relative min-h-screen flex items-center justify-center pt-24">
+      <div className="relative overflow-hidden bg-[#050816] text-white min-h-screen">
         <AnimatedBackground />
 
-        <div className="absolute inset-0 opacity-40 dark:opacity-25">
-          <img
-            src="/img/bg.png"
-            alt="MECYBER live background design"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40 dark:bg-black/60" />
-        </div>
-
-        <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
-          className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
-        >
-          <motion.div variants={fadeInUp} className="mb-8">
-            <div className="flex flex-col items-center text-center">
-              <div className="flex-shrink-0 mb-6">
-                <div
-                  className="relative w-32 h-32 sm:w-44 sm:h-44 lg:w-52 lg:h-52 rounded-full overflow-hidden border border-white/35 bg-white/5 shadow-[0_0_60px_rgba(59,130,246,0.28)] ring-1 ring-inset ring-white/10"
-                  aria-label="MECYBER avatar"
-                >
-                  {/* outer glow ring */}
-                  <div className="pointer-events-none absolute inset-0 rounded-full animate-border-glow motion-reduce:animate-none" />
-
-                  <img
-                    src="/img/mecyber.png"
-                    alt="MECYBER avatar"
-                    className="w-full h-full object-cover"
-                    loading="eager"
-                    decoding="async"
-                    onError={(e) => {
-                      const img = e.currentTarget
-                      img.src = '/img/MECYBER.png'
-                    }}
-                  />
-
-                  {/* subtle cyber gradient highlight */}
-                  <div className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_20%,rgba(236,72,153,0.35),transparent_55%),radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.35),transparent_50%)]" />
-                </div>
+        <section className="relative z-10 px-4 pt-28 pb-20 sm:px-6 lg:px-8">
+          <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.18),transparent_36%),radial-gradient(circle_at_top_right,_rgba(168,85,247,0.18),transparent_32%)] blur-3xl" />
+          <div className="relative max-w-7xl mx-auto grid gap-16 xl:grid-cols-[1.4fr_1fr] items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="space-y-8"
+            >
+              <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-white/5 px-4 py-2 text-sm text-violet-100 shadow-[0_10px_50px_rgba(99,102,241,0.12)]">
+                <span className="h-2 w-2 rounded-full bg-violet-500" />
+                Premium Developer Portfolio
               </div>
 
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 text-white">
-                Dev Kayvin
-              </h1>
-              <h2 className="text-xl md:text-2xl lg:text-3xl text-slate-200/80 mb-6">
-                Full-Stack Software Developer and Cyber Security Expert
-              </h2>
-              <p className="text-lg md:text-xl text-slate-200/75 max-w-2xl mb-8">
-                I create exceptional digital experiences with modern web and mobile app technologies.
-                Passionate about clean code, user experience, security and scalable solutions.
-              </p>
-            </div>
-          </motion.div>
+              <div className="space-y-4">
+                <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Hello, I&apos;m</p>
+                <h1 className="text-5xl font-semibold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+                  Kayvin
+                </h1>
+                <div className="flex flex-wrap items-center gap-3 text-xl text-slate-300 sm:text-2xl">
+                  <span className="font-medium text-white">I am a</span>
+                  <motion.span
+                    key={roles[activeRole]}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -12 }}
+                    transition={{ duration: 0.4 }}
+                    className="rounded-full border border-violet-500/20 bg-white/5 px-4 py-2 text-violet-100 shadow-lg shadow-violet-500/10"
+                  >
+                    {roles[activeRole]}
+                  </motion.span>
+                </div>
+                <p className="max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+                  I build modern, scalable, and user-focused digital products that look premium and perform beautifully.
+                </p>
+              </div>
 
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link to="/projects">
-              <Button size="lg" className="group">
-                View My Work
-                <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link to="/gallery">
-              <Button size="lg" variant="secondary" className="group">
-                Gallery
-              </Button>
-            </Link>
-            <a
-              href="/cv.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-11 px-8"
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Link to="/projects" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full justify-center rounded-full bg-gradient-to-r from-violet-500 to-sky-500 text-white shadow-xl shadow-violet-500/20">
+                    View Projects
+                    <ArrowRight size={18} className="ml-2" />
+                  </Button>
+                </Link>
+                <a
+                  href="/cv.html"
+                  className="inline-flex h-12 w-full items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 text-sm font-semibold text-white transition hover:border-violet-300/30 hover:bg-white/10 sm:w-auto"
+                >
+                  <Download size={16} className="mr-2" />
+                  Download CV
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, ease: 'easeOut' }}
+              className="relative mx-auto w-full max-w-md overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/85 shadow-[0_40px_120px_rgba(0,0,0,0.25)]"
             >
-              <Download size={16} className="mr-2" />
-              View My CV
-            </a>
-          </motion.div>
+              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/img/safcom.png')" }} />
+              <div className="absolute inset-0 bg-slate-950/74" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.35),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.28),transparent_28%)]" />
+              <div className="relative flex min-h-[520px] flex-col justify-end p-8">
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {['React', 'Next.js', 'TypeScript', 'Node.js'].map((tech) => (
+                    <div
+                      key={tech}
+                      className="rounded-3xl border border-white/10 bg-white/10 px-4 py-3 text-center text-sm text-white shadow-lg shadow-slate-950/20"
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
-
-        </motion.div>
+        <section className="relative z-10 px-4 pb-24 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <SectionTitle title="What I focus on" subtitle="A simple overview of my approach and values." />
+            <div className="grid gap-6 md:grid-cols-3">
+              {highlights.map((item) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="glass-panel rounded-[2rem] p-8"
+                >
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-violet-500/10 text-violet-200">
+                    <Sparkles size={24} />
+                  </div>
+                  <h2 className="mt-6 text-2xl font-semibold text-white">{item.title}</h2>
+                  <p className="mt-4 text-slate-300">{item.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </>
   )
 }
 
 export default Home
-

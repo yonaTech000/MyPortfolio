@@ -20,13 +20,13 @@
     "featured": true
   },
   {
-    "id": "cybersecure",
-    "title": "CyberSecure",
-    "description": "A comprehensive cybersecurity dashboard for monitoring network threats, analyzing vulnerabilities, and managing security incidents in real-time.",
-    "techStack": ["Vue.js", "Python", "Django", "PostgreSQL", "Redis"],
-    "githubUrl": "https://github.com/yonaTech000/cybersecure",
-    "liveUrl": "https://cybersecure-dashboard.com",
-    "image": "/img/cybersecure.png",
-    "featured": false
+    "id": "luxewear",
+    "title": "LuxeWear Eshop",
+    "description": "A premium fashion e-commerce storefront for luxury apparel, built with performance-first frontend design and elegant product displays.",
+    "techStack": ["React", "TypeScript", "Tailwind", "Stripe", "Vercel"],
+    "githubUrl": "https://github.com/yonaTech000/luxewear-eshop",
+    "liveUrl": "https://luxewear-eshop.vercel.app",
+    "image": "/img/logo.png",
+    "featured": true
   }
 ]
